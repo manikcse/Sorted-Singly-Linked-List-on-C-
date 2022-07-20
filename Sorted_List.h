@@ -1,0 +1,59 @@
+#include <iostream>
+#include <sstream>
+#include <string>
+#define nullptr 0
+
+// Name: Manik Debnath
+// Student ID.: 2021124913
+
+using namespace std;
+
+// Creating Single Node
+
+class Node {
+		    private:
+		        int element;
+		       Node *next_node;
+		    public:
+		        Node( int = 0, Node* = nullptr );
+				int retrieve() const;
+		        Node *next() const;
+		  	friend class Sorted_single_list;
+		};
+
+
+class Sorted_single_list {
+	private:
+		Node*list_head;
+		Node*list_tail;
+		int list_size;
+	public:
+		Sorted_single_list();
+		~Sorted_single_list();
+		Sorted_single_list( Sorted_single_list const & sorted_single_list );
+
+// Accessors
+
+		bool empty() const;
+		int size() const;
+		int front() const;
+		Node*head() const;
+		Node*tail() const;
+	    int count( int n ) const;
+		bool display() const;
+
+// Mutators
+		
+		void swap( Sorted_single_list & );
+		Sorted_single_list & operator = ( Sorted_single_list const &rhs );
+		
+		void push_front(int n );
+		int  pop_front();
+		int erase( int n );
+		bool insert(int n, int l );
+        int remove( int n );
+        int olderase( int n );
+        int destroy();
+        
+};
+
